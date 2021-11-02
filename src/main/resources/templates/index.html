@@ -38,7 +38,7 @@
                         <th>Nombre</th>
                         <th>Descripcion</th>
                         <th>Fecha de finalizacion</th>
-                        <th>aciones</th>
+                        <th>acciones</th>
                         <th>% de realizado</th>
                         <<th>Estado</th>
                     </tr>
@@ -46,26 +46,26 @@
                 <tbody>
                     <tr th:each="subtarea:${subtareas}">
                         <td th:text="${subtarea.id}"></td>
-                        <td th:text="${subtarea.tarea}"></td>
+                        <td th:text="${subtarea.subtarea}"></td>
                         <td th:text="${subtarea.descripcion}"></td>
                         <td th:text="${subtarea.fechafinalizacion}"></td>
                         <td>
-                            <a th:onclick="editar([[${persona.id}]])"  class="btn btn-warning">Editar</a>
+                            <a th:onclick="editar([[${subtarea.id}]])"  class="btn btn-warning">Editar</a>
                             <!--<a th:href="@{/editar/}+${persona.id}" class="btn btn-warning">Editar</a>-->
-                            <a th:onclick= "eliminar([[${persona.id}]])" class="btn btn-danger">Eliminar</a>
+                            <a th:onclick= "eliminar([[${subtarea.id}]])" class="btn btn-danger">Eliminar</a>
                         </td>
                         <td>
-                           <p1>algo</p1>
+                            <!-- <td th:text="${subtarea.porcentaje}"></td> -->
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
+  <script src="funciones.js"></script>
   <script>
+    var progreso="${subtarea.porcentaje}";
     $('#bar').css('width', progreso + '%');
   </script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="funciones.js"></script>
 </body>
 </html>

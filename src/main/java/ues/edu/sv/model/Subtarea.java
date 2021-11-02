@@ -14,71 +14,61 @@ public class Subtarea {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nombre;
-    private String apellido;
-    private String telefono;
-    private Integer porcentaje;
+    private String subtarea;
+    private String descripcion;
+    private String fechafinalizacion;
+    private int porcentaje;
     
     public Subtarea(){
         }
 
-    public Subtarea(int id, String nombre, String apellido, String telefono) {
+    public Subtarea(int id, String subtarea, String descripcion, String fechafinalizacion, int porcentaje) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.porcentaje=porcentaje;
+        this.subtarea = subtarea;
+        this.descripcion = descripcion;
+        this.fechafinalizacion = fechafinalizacion;
+        this.porcentaje = porcentaje;
     }
 
+    
     
     public int getId() {
         return id;
     }
 
-    
     public void setId(int id) {
         this.id = id;
     }
 
-    
-    public String getNombre() {
-        return nombre;
+    public String getSubtarea() {
+        return subtarea;
     }
 
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setSubtarea(String subtarea) {
+        this.subtarea = subtarea;
     }
 
-    
-    public String getApellido() {
-        return apellido;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    
-    public String getTelefono() {
-        return telefono;
+    public String getFechafinalizacion() {
+        return fechafinalizacion;
     }
 
-    
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setFechafinalizacion(String fechafinalizacion) {
+        this.fechafinalizacion = fechafinalizacion;
     }
 
-    public Integer getPorcentaje() {
+    public int getPorcentaje() {
         return porcentaje;
     }
 
-    public void setPorcentaje(Integer porcentaje) {
+    public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
     }
-    
-    
-    
-    
 }
