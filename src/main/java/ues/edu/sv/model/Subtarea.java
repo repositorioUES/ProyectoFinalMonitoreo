@@ -8,13 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="persona")
+@Table(name="subtareatabla")
+
 public class Subtarea {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String subtarea;
+    private String subtareaonline;
     private String descripcion;
     private String fechafinalizacion;
     private int porcentaje;
@@ -22,9 +23,9 @@ public class Subtarea {
     public Subtarea(){
         }
 
-    public Subtarea(int id, String subtarea, String descripcion, String fechafinalizacion, int porcentaje) {
+    public Subtarea(int id, String subtareaonline, String descripcion, String fechafinalizacion, int porcentaje) {
         this.id = id;
-        this.subtarea = subtarea;
+        this.subtareaonline = subtareaonline;
         this.descripcion = descripcion;
         this.fechafinalizacion = fechafinalizacion;
         this.porcentaje = porcentaje;
@@ -40,14 +41,15 @@ public class Subtarea {
         this.id = id;
     }
 
-    public String getSubtarea() {
-        return subtarea;
+    public String getSubtareaonline() {
+        return subtareaonline;
     }
 
-    public void setSubtarea(String subtarea) {
-        this.subtarea = subtarea;
+    public void setSubtareaonline(String subtareaonline) {
+        this.subtareaonline = subtareaonline;
     }
 
+ 
     public String getDescripcion() {
         return descripcion;
     }

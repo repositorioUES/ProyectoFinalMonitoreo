@@ -35,7 +35,7 @@ public class Controlador {
     }
     
     @PostMapping("/save")
-    public String save(@Valid Subtarea p,Model model){
+    public String save(@Valid Subtarea p, Model model){
         service.save(p);
         return "redirect:/";
     }

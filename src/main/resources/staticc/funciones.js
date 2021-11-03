@@ -55,7 +55,8 @@ function editar(id) {
                 }
             });
     }
-function valor(id)
+function valor()
 {
-   return "50";
+    var progreso=50;
+    $('#bar').css('width', progreso + '%');
 }
