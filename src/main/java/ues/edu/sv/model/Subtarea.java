@@ -19,20 +19,28 @@ public class Subtarea {
     private String descripcion;
     private String fechafinalizacion;
     private int porcentaje;
+    private int idTareaAsignada;
     
     public Subtarea(){
         }
 
-    public Subtarea(int id, String subtareaonline, String descripcion, String fechafinalizacion, int porcentaje) {
+    public Subtarea(int id, String subtareaonline, String descripcion, String fechafinalizacion, int porcentaje, int idTareaAsignada) {
         this.id = id;
         this.subtareaonline = subtareaonline;
         this.descripcion = descripcion;
         this.fechafinalizacion = fechafinalizacion;
         this.porcentaje = porcentaje;
+        this.idTareaAsignada = idTareaAsignada;
+    }
+    
+    public int getIdTareaAsignada() {
+        return idTareaAsignada;
     }
 
-    
-    
+    public void setIdTareaAsignada(int tareaAsignada) {
+        this.idTareaAsignada = tareaAsignada;
+    }
+
     public int getId() {
         return id;
     }

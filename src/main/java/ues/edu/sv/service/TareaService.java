@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import ues.edu.sv.model.Tarea;
 import ues.edu.sv.interfaces.ITarea;
 import ues.edu.sv.interfaceService.ITareaService;
-import ues.edu.sv.model.Subtarea;
 
 @Service
 public class TareaService implements ITareaService{

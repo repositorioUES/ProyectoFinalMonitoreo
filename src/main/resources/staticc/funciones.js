@@ -10,7 +10,7 @@ function eliminar(id) {
             .then((OK) => {
                 if (OK) {
                     $.ajax({
-                        url: "/eliminar/" + id,
+                        url: "/eliminarTarea/" + id,
                         success: function (res) {
                             console.log(res);
                         },
@@ -19,7 +19,7 @@ function eliminar(id) {
                                 icon: "success",
                             }).then((ok) => {
                         if (ok) {
-                            location.href = "/"
+                            location.href = "/";
                         }
                     });
                 } else {
@@ -55,6 +55,8 @@ function editar(id) {
                 }
             });
     }
+    
+    
 function valor()
 {
     var progreso=50;

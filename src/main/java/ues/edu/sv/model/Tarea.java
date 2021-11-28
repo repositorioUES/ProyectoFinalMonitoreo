@@ -14,12 +14,12 @@ public class Tarea {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nombre;
+    private String nombre, descripcion;
     private int avance;
     
     public Tarea(){}
 
-    public Tarea(int id, String nombre, int avance) {
+    public Tarea(int id, String nombre, String descripcion, int avance) {
         this.id = id;
         this.nombre = nombre;
         this.avance = avance;
@@ -35,7 +35,6 @@ public class Tarea {
         this.id = id;
     }
 
-    
     public String getNombre() {
         return nombre;
     }
@@ -52,5 +51,15 @@ public class Tarea {
     public void setAvance(int avance) {
         this.avance = avance;
     }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    
     
 }

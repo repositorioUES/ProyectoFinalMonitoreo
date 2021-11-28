@@ -1,7 +1,6 @@
 
 package ues.edu.sv.controller;
 
-import java.util.List;
 import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,37 +18,40 @@ import ues.edu.sv.interfaceService.ISubtareasService;
 public class Controlador {
     
     @Autowired
-    private ISubtareasService service;
+    private ISubtareasService subtareaService;
     
+      
     @GetMapping("/")
     public String listar(Model model){
-        List<Subtarea>subtareas=service.Listar();
-        model.addAttribute("subtareas", subtareas);
-        return "index";
+        return "proyecto";
     }
     
     @GetMapping("/new")
     public String agregar(Model model){
         model.addAttribute("subtarea", new Subtarea());
-        return "form";
+        return "formCrearSubtarea";
     }
     
-    @PostMapping("/save")
-    public String save(@Valid Subtarea p, Model model){
-        service.save(p);
-        return "redirect:/";
+    @PostMapping("/save/{idTareaAsignada}")
+    public String save(@Valid Subtarea p,@PathVariable int idTareaAsignada){
+        subtareaService.save(p, idTareaAsignada);
+        return "redirect:/subtareas/{idTareaAsignada}";
     }
     
-    @GetMapping("/editar/{id}")
-    public String editar(@PathVariable int id, Model model){
-        Optional<Subtarea>subtarea=service.ListarId(id);
+    @GetMapping("/editar/{idTareaAsignada}/{id}")
+    public String editar(@PathVariable int idTareaAsignada, @PathVariable int id,Model model){
+        Optional<Subtarea>subtarea =subtareaService.ListarId(id);
         model.addAttribute("subtarea", subtarea);
-        return "form";
+        model.addAttribute("idTarea",idTareaAsignada);
+        return "formEditarSubtarea";
+    }
+
+    
+    @GetMapping("/eliminar/{idTareaAsignada}/{id}")
+    public String eliminar(@PathVariable int idTareaAsignada, @PathVariable int id, Model model){
+        subtareaService.delete(id);                   
+        return "redirect:/subtareas/{idTareaAsignada}";
     }
     
-    @GetMapping("/eliminar/{id}")
-    public String eliminar(@PathVariable int id, Model model){
-        service.delete(id);
-        return "redirect:/";
-    }
+
 }
